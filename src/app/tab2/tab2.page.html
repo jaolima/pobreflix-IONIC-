@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>PobreFlix</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="container" >
+        <h6>filmes populares</h6>
+        <div class="scroll listaCategorias" scrollX="true">
+            <ion-col size="3" *ngFor="let popular of populares">
+                <img src="https://image.tmdb.org/t/p/w500{{popular.poster_path}}"  [routerLink]="['/desc', popular.id]">
+            </ion-col>
+        </div>
+
+        <h6>filmes mais bem avaliados</h6>
+        <div class="scroll listaCategorias" scrollX="true">
+            <ion-col size="3" *ngFor="let rated of movie_rated">
+                <img src="https://image.tmdb.org/t/p/w500{{rated.poster_path}}"  [routerLink]="['/desc', popular.id]">
+            </ion-col>
+        </div>
+
+
+    </div>
+</ion-content>

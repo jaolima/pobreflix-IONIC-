@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>desc</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-toolbar>
+    <ion-title>Title Only</ion-title>
+</ion-toolbar>
+<ion-content>
+
+    <ion-card>
+        <img src="https://image.tmdb.org/t/p/w500{{filme_desc.backdrop_path}}" size="4">
+        <ion-card-header>
+            <ion-card-subtitle></ion-card-subtitle>
+            <ion-card-title>{{filme_desc.title}}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            <!--{{filme_desc.overview}}-->
+            <ion-row>
+                <ion-chip>
+                    <ion-avatar>
+                        <img src="http://www.iconarchive.com/download/i99782/designbolts/free-multimedia/Film.ico">
+                    </ion-avatar>
+                    <ion-label>nota: {{filme_desc.vote_average}}</ion-label>
+                </ion-chip>
+            </ion-row>
+
+            <ion-row>
+                <ion-chip>
+                    <ion-avatar>
+                        <img src="http://www.iconarchive.com/download/i99782/designbolts/free-multimedia/Film.ico">
+                    </ion-avatar>
+                    <ion-label>lançamento: {{filme_desc.release_date}}</ion-label>
+                </ion-chip>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+    <h6>Elenco</h6>
+    <div class="scroll listaCategorias" scrollX="true">
+        <ion-col size="3" *ngFor="let casts of movie_casts">
+            <img  src="https://image.tmdb.org/t/p/w500{{casts.profile_path}}" [routerLink]="['/casts-information', casts.id]" >
+        </ion-col>
+    </div>
+</ion-content>
